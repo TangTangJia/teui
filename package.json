@@ -1,7 +1,7 @@
 {
   "name": "teui",
   "version": "1.0.1",
-  "description": "A Vue.js project",
+  "description": "a UI framework for VUE",
   "Keywords": "vue ui components",
   "author": "tangjia <tangjiacandy@163.com>",
   "main": "package/teui.min.js",
@@ -17,6 +17,7 @@
     "package": "npm run package:prod && npm publish && npm run build"
   },
   "dependencies": {
+    "@vue/eslint-config-prettier": "^4.0.1",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
     "vue": "^2.5.2",

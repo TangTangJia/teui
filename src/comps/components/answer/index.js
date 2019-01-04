@@ -1,2 +1,2 @@
-import Answer from './answer.vue'
-export default Answer
+import Answer from "./answer.vue";
+export default Answer;

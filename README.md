@@ -1,6 +1,6 @@
 # teui
 
-> A Vue.js project
+> a UI framework for VUE
 
 ## Build Setup
 

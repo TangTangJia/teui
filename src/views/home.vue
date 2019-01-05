@@ -6,7 +6,7 @@
       @click="click"
       class="btn"
     >成功</te-button> -->
-    <te-answer :data="childData" @click="click"></te-answer>
+    <te-answer :data="childData" @click="answerClick"></te-answer>
   </div>
 </template>
 
@@ -36,6 +36,7 @@ export default {
           }
         },
         total: 3,
+        isShowTotal: false,
         answers: [
           {
             index: 1,
@@ -99,7 +100,7 @@ export default {
     };
   },
   methods: {
-    click(event) {
+    answerClick(event) {
       console.log(event);
     }
   }

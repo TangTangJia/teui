@@ -2,7 +2,7 @@
   <div class="te__answer">
     <div>
       <div class="title" :style="titleStyle">
-        <div class="quesNum" v-if="data.total">
+        <div class="quesNum" v-if="data.isShowTotal">
           <span class="current">{{ currentQues.index }}/</span>
           <span class="total">{{ data.total }}</span>
         </div>
@@ -65,7 +65,7 @@ export default {
     };
   },
   created() {
-    // console.log(this.data)
+    // 设置默认样式
     this.currentQues = this.data.answers[this.index];
     this.titleStyle.fontSize = this.data.style.title.fontSize || "14" + "px";
     this.titleStyle.fontWeight = this.data.style.title.fontWeight || "bold";
@@ -81,15 +81,16 @@ export default {
   },
   methods: {
     click(type, index) {
-      // console.log(index)
       this.data.answers[index - 1].selected = type;
+      // 存储答案
       let sureAnswer = [];
       if (index === this.data.total) {
         sureAnswer = this.data.answers.map(item => {
           return item.selected;
         });
         console.log(sureAnswer);
-        this.$emit("click", sureAnswer);
+        // 将选择的答案传递给父组件
+        this.$emit("answerClick", sureAnswer);
         return;
       }
       this.index = index - 1;

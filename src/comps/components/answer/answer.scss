@@ -18,7 +18,11 @@
         // top:0;
         transform: translateX(-50%);
         .quesNum{
+            // flex: 1;
             margin-right: 0.625rem;
+        }
+        .text{
+            width: 80%;
         }
       }
       .answers{

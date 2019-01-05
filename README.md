@@ -1,6 +1,8 @@
 # teui
 
-> a UI framework for VUE
+> 基于VUE的UI框架  
+> 适配：根据场景需求，不同组件适配不同  
+>在线文档 https://tangtangjia.github.io/teui/#/
 
 ## Build Setup
 

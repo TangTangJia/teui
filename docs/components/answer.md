@@ -2,7 +2,7 @@
 ----
 #### 基础用法
 ``` html
-     <te-answer :data="data" @click="answerClick"></te-answer> // 事件会将用户选择的答案以数组的形式返回
+     <te-answer :data="data" @answerClick="click"></te-answer> // 事件会将用户选择的答案以数组的形式返回
 ```
 #### 适配：移动端
 #### 数据结构

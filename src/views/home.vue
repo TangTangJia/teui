@@ -6,7 +6,7 @@
       @click="click"
       class="btn"
     >成功</te-button> -->
-    <te-answer :data="childData" @click="answerClick"></te-answer>
+    <te-answer :data="childData" @answerClick="click"></te-answer>
   </div>
 </template>
 
@@ -100,7 +100,7 @@ export default {
     };
   },
   methods: {
-    answerClick(event) {
+    click(event) {
       console.log(event);
     }
   }

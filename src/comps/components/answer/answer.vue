@@ -88,7 +88,7 @@ export default {
         sureAnswer = this.data.answers.map(item => {
           return item.selected;
         });
-        console.log(sureAnswer);
+        // console.log(sureAnswer);
         // 将选择的答案传递给父组件
         this.$emit("answerClick", sureAnswer);
         return;

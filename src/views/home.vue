@@ -6,8 +6,8 @@
       @click="click"
       class="btn"
     >成功</te-button> -->
-    <!-- <te-answer :data="childData" @answerClick="click"></te-answer> -->
-    <te-lottery :data="lotteryData" @stop="stop" class="lottery"></te-lottery>
+    <te-answer :data="childData" @answerClick="click"></te-answer>
+    <!-- <te-lottery :data="lotteryData" @stop="stop" class="lottery"></te-lottery> -->
   </div>
 </template>
 

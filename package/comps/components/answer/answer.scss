@@ -1,0 +1,47 @@
+.te__answer{
+    position: relative;
+    .title {
+        // background: url("../../assets/three_question_bg.png") no-repeat;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        // width: 20.78rem;
+        // height: 5rem;
+        // font-size:14px;
+        // font-weight: bold;
+        display: flex;
+        align-items: center;
+        // justify-content: flex-start;
+        // margin: 0 auto;
+        // padding-left:0.8rem;
+        position: absolute;
+        // left:50%;
+        // top:0;
+        transform: translateX(-50%);
+        .quesNum{
+            // flex: 1;
+            margin-right: 0.625rem;
+        }
+        .text{
+            width: 80%;
+        }
+      }
+      .answers{
+          ul{
+            position: absolute;
+            // left: 50%;
+            // top:5.63rem;
+            transform: translateX(-50%);
+              li{
+                //   width: 20rem;
+                //   height: 3.59rem;
+                //   text-align: left;
+                //   line-height: 3.59rem;
+                //   padding-left:0.63rem;
+                //   font-size:14px;
+                //   font-weight: bold;
+                //   background: url('../../assets/btn2.png') no-repeat;
+                  background-size:100%;
+              }
+          }
+      }
+}

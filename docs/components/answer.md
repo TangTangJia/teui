@@ -12,7 +12,7 @@
           "title": {  // 标题样式
             "width": number, // 标题宽度 单位rem 换算width/32
             "height": number, // 标题高度
-            "backgroundImage": string, // 背景
+            "backgroundImage": string, // 背景  如：'url(' + require('../assets/btn2.png') + ')'
             "left": "50%", // 偏移
             "top": number || string, // 偏移
             "paddingLeft": number,
@@ -24,7 +24,7 @@
           "answer": { // 选项样式
             "width": number, // 选项宽度 单位rem
             "height": number,
-            "backgroundImage": string,
+            "backgroundImage": string,  // 如：'url(' + require('../assets/btn2.png') + ')'
             "left": "50%",
             "top": number || string,
             "lineHeight": number,

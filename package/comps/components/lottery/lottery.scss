@@ -1,0 +1,30 @@
+.te__lottery{
+    ul{
+        // width: 700px;
+        // height: 605px;
+        display: flex;
+        flex-wrap: wrap;
+        li{
+            position: relative;
+            // width: 200px;
+            // height: 200px;
+            // background: pink;
+            margin: auto auto;
+            background-repeat: no-repeat;
+            background-size:100%;
+            // border:1px solid #000000;
+            // @include border-radius
+            // flex:1;
+        }
+        .mask::before{
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top:0;
+            background-color:#000;
+            opacity: 0.4;
+        }
+    }
+}

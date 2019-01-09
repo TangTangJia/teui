@@ -9,7 +9,7 @@
     font-style: normal;
   }
   
-[class^="te--"], [class*=" te--"]  {
+[class^="te__icon--"], [class*=" te__icon--"]  {
     font-family:"iconfont" !important;
     font-size:$font-size-base;
     font-style:normal;
@@ -19,24 +19,24 @@
     
 }
 
-.te--nochecked:before { content: "\e668"; }
-.te--checked:before { content: "\e730"; }
+.te__icon--nochecked:before { content: "\e668"; }
+.te__icon--checked:before { content: "\e730"; }
 
-.te--radio:before { content: "\e6da"; }
-.te--hor-radio:before { content: "\e680"; }
-.te--hor-radio-check:before { content: "\e62b"; }
+.te__icon--radio:before { content: "\e6da"; }
+.te__icon--hor-radio:before { content: "\e680"; }
+.te__icon--hor-radio-check:before { content: "\e62b"; }
 
-.te--phone:before { content: "\e61e"; }
+.te__icon--phone:before { content: "\e61e"; }
 
-.te--search:before { content: "\e651"; }
+.te__icon--search:before { content: "\e651"; }
 
-.te--close-outline:before { content: "\e66e"; }
-.te--close:before { content: "\e627"; }
+.te__icon--close-outline:before { content: "\e66e"; }
+.te__icon--close:before { content: "\e627"; }
 
-.te--homefill:before { content: "\e750"; }
-.te--home:before { content: "\e751"; }
+.te__icon--homefill:before { content: "\e750"; }
+.te__icon--home:before { content: "\e751"; }
 
-.te--myfill:before { content: "\e75d"; }
+.te__icon--myfill:before { content: "\e75d"; }
 .te__icon--my:before { content: "\e75e"; }
 
 .te__icon--userfill:before { content: "\e787"; }

@@ -3,6 +3,17 @@
 > 基于VUE的UI框架  
 > 适配：根据场景需求，不同组件适配不同 
 
+----
+## 下载
+``` bash
+  npm i teui
+```
+### 使用
+``` bash
+    import teui from 'teui'
+    import 'teui/package/teui.min.css'
+    Vue.use(teui)
+```
 ## Build Setup
 
 ``` bash

@@ -12,7 +12,7 @@
         "finalIndex": number,  // 获奖格子索引
         "style": {
           "btnBg": string, // 开始按钮背景图
-          "bg": array,  // 每个格子背景图
+          "bg": array,  // 每个格子背景图   如：[require('../assets/result_1.png'),require('../assets/result_2.png')]
           "uWidth": string,  // 总宽度 (需带单位，pc端：px；移动端：实际宽度/32rem)
           "uHeight": string, // 总高度 (需带单位，pc端：px；移动端：实际宽度/32rem)
           "lWidth": string,  // 格子宽度 (单位同上)

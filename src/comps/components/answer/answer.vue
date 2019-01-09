@@ -37,7 +37,7 @@ export default {
         width: this.data.style.title.width + "rem",
         height: this.data.style.title.height + "rem",
         backgroundImage: this.data.style.title.backgroundImage,
-        left: this.data.style.title.left,
+        left: "",
         top: this.data.style.title.top + "rem",
         fontSize: "",
         fontWeight: "",
@@ -47,7 +47,7 @@ export default {
       },
       ulStyle: {
         // ul样式
-        left: this.data.style.answer.left,
+        left: "",
         top: this.data.style.answer.top + "rem"
       },
       liStyle: {
@@ -67,11 +67,13 @@ export default {
   created() {
     // 设置默认样式
     this.currentQues = this.data.answers[this.index];
+    this.ulStyle.left = this.data.style.answer.left || "50%";
     this.titleStyle.fontSize = this.data.style.title.fontSize || "14" + "px";
     this.titleStyle.fontWeight = this.data.style.title.fontWeight || "bold";
     this.titleStyle.color = this.data.style.title.color || "#000000";
     this.titleStyle.justifyContent =
       this.data.style.title.justifyContent || "flex-start";
+    this.titleStyle.left = this.data.style.title.left || "50%";
     this.liStyle.fontSize = this.data.style.answer.fontSize || "14" + "px";
     this.liStyle.fontWeight = this.data.style.answer.fontWeight || "bold";
     this.liStyle.color = this.data.style.answer.color || "#000000";

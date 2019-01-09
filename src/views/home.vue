@@ -1,12 +1,13 @@
 <template>
-  <div>
+  <div class="home">
     <!-- <te-button
       type="primary"
       icon="te__icon--checked"
       @click="click"
       class="btn"
     >成功</te-button> -->
-    <te-answer :data="childData" @answerClick="click"></te-answer>
+    <!-- <te-answer :data="childData" @answerClick="click"></te-answer> -->
+    <te-lottery :data="lotteryData" @stop="stop" class="lottery"></te-lottery>
   </div>
 </template>
 
@@ -19,9 +20,7 @@ export default {
           title: {
             width: 20.78,
             height: 5,
-            backgroundImage:
-              "url(" + require("../assets/three_question_bg.png") + ")",
-            left: "50%",
+            backgroundImage: "url('/static/images/three_question_bg.png')",
             top: 0,
             paddingLeft: "0.8"
           },
@@ -30,7 +29,6 @@ export default {
             height: 3.59,
             backgroundImage:
               "url(" + require("../assets/three_answer_bg.png") + ")",
-            left: "50%",
             top: 5.63,
             lineHeight: 3.59
           }
@@ -96,15 +94,60 @@ export default {
             ]
           }
         ]
+      },
+      lotteryData: {
+        isStart: true,
+        finalIndex: 5,
+        style: {
+          btnBg: "/static/images/btn_start.png",
+          bg: [
+            "/static/images/result_1.png",
+            "/static/images/result_2.png",
+            "/static/images/result_3.png",
+            "/static/images/result_4.png",
+            // "/static/images/btn_start.png",
+            "/static/images/result_5.png",
+            "/static/images/result_6.png",
+            "/static/images/result_7.png",
+            "/static/images/result_8.png"
+          ],
+          padding: "1rem",
+          uWidth: "30.31rem",
+          uHeight: "26.25rem",
+          lWidth: "8.88rem",
+          lHeight: "7.63rem",
+          borderRadius: "10px",
+          backgroundColor: "#1d242e"
+        }
       }
     };
   },
   methods: {
     click(event) {
       console.log(event);
+    },
+    stop(evnet) {
+      // console.log(evnet);
+      if (evnet) {
+        setTimeout(() => {
+          alert("抽奖结束");
+        }, 1000);
+      }
     }
   }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.home {
+  position: relative;
+  width: 100%;
+  height: 1000px;
+}
+.lottery {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+}
+</style>

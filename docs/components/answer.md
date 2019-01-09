@@ -13,7 +13,7 @@
             "width": number, // 标题宽度 单位rem 换算width/32
             "height": number, // 标题高度
             "backgroundImage": string, // 背景
-            "left": number || string, // 偏移
+            "left": "50%", // 偏移
             "top": number || string, // 偏移
             "paddingLeft": number,
             "fontSize": "12px", // 可选
@@ -25,7 +25,7 @@
             "width": number, // 选项宽度 单位rem
             "height": number,
             "backgroundImage": string,
-            "left": number || string,
+            "left": "50%",
             "top": number || string,
             "lineHeight": number,
             "fontSize": "12px", // 单位px 可选

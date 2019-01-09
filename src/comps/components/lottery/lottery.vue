@@ -17,10 +17,10 @@
           height: item.height
         }"
         :key="index"
-        :class="'li' + (index + 1)"
+        :class="['li' + (index + 1), { mask: activeClass[index + 1] }]"
       ></li>
       <li
-        class="li8"
+        :class="['li8', { mask: activeClass[8] }]"
         :style="{
           backgroundImage: 'url(' + data.style.bg[7] + ')',
           width: this.data.style.lWidth,
@@ -36,7 +36,7 @@
         }"
       ></li>
       <li
-        class="li4"
+        :class="['li4', { mask: activeClass[4] }]"
         :style="{
           backgroundImage: 'url(' + data.style.bg[3] + ')',
           width: this.data.style.lWidth,
@@ -51,7 +51,7 @@
           width: item.width,
           height: item.height
         }"
-        :class="'li' + (7 - index)"
+        :class="['li' + (7 - index), { mask: activeClass[7 - index] }]"
       ></li>
     </ul>
   </div>
@@ -77,7 +77,8 @@ export default {
       firstList: this.data.style.bg.slice(0, 3), // 奖品选项第一组
       lastList: this.data.style.bg.slice(4, 7), // 奖品选项第二组
       flist: [],
-      llist: []
+      llist: [],
+      activeClass: [false, false, false, false, false, false, false, false]
     };
   },
   created() {
@@ -146,15 +147,21 @@ export default {
         // 判断是否大于最大数
         this.amplification_index = 1;
       }
-      let strli = ".li";
-      strli += this.amplification_index;
-      let lis = document.querySelectorAll("li");
+      // let strli = ".li";
+      // strli += this.amplification_index;
+      // let lis = document.querySelectorAll("li");
+      // // 删除类名
+      // for (let item of lis) {
+      //   item.classList.remove("mask");
+      // }
+      // // 给当前项加背景
+      // document.querySelector(strli).classList.add("mask");
       // 删除类名
-      for (let item of lis) {
-        item.classList.remove("mask");
-      }
+      this.activeClass = this.activeClass.map(() => {
+        return false;
+      });
       // 给当前项加背景
-      document.querySelector(strli).classList.add("mask");
+      this.activeClass[this.amplification_index] = true;
     }
   }
 };

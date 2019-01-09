@@ -97,7 +97,7 @@ export default {
       },
       lotteryData: {
         isStart: true,
-        finalIndex: 5,
+        finalIndex: 6,
         style: {
           btnBg: "/static/images/btn_start.png",
           bg: [

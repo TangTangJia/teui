@@ -20,21 +20,19 @@ export default {
           title: {
             width: 20.78,
             height: 5,
-            backgroundImage: "url('/static/images/three_question_bg.png')",
+            backgroundImage: "/static/images/three_question_bg.png",
             top: 0,
             paddingLeft: "0.8"
           },
           answer: {
             width: 20,
-            height: 3.59,
-            backgroundImage:
-              "url(" + require("../assets/three_answer_bg.png") + ")",
+            height: 3.4,
             top: 5.63,
             lineHeight: 3.59
           }
         },
         total: 3,
-        isShowTotal: false,
+        isShowTotal: true,
         answers: [
           {
             index: 1,
@@ -43,15 +41,21 @@ export default {
             ques: [
               {
                 answer: "A、靠近湖边",
-                type: "A"
+                type: "A",
+                backgroundImage: require("../assets/btn2.png"),
+                activeBg: require("../assets/btn-2.png")
               },
               {
                 answer: "B、深山",
-                type: "B"
+                type: "B",
+                backgroundImage: require("../assets/btn2.png"),
+                activeBg: require("../assets/btn-2.png")
               },
               {
                 answer: "C、森林",
-                type: "C"
+                type: "C",
+                backgroundImage: require("../assets/btn2.png"),
+                activeBg: require("../assets/btn-2.png")
               }
             ]
           },
@@ -62,15 +66,21 @@ export default {
             ques: [
               {
                 answer: "A、海景别墅",
-                type: "A"
+                type: "A",
+                backgroundImage: require("../assets/btn2.png"),
+                activeBg: require("../assets/btn-2.png")
               },
               {
                 answer: "B、海边公寓",
-                type: "B"
+                type: "B",
+                backgroundImage: require("../assets/btn2.png"),
+                activeBg: require("../assets/btn-2.png")
               },
               {
                 answer: "C、田园小屋",
-                type: "C"
+                type: "C",
+                backgroundImage: require("../assets/btn2.png"),
+                activeBg: require("../assets/btn-2.png")
               }
             ]
           },
@@ -81,15 +91,21 @@ export default {
             ques: [
               {
                 answer: "A、是的",
-                type: "A"
+                type: "A",
+                backgroundImage: require("../assets/btn2.png"),
+                activeBg: require("../assets/btn-2.png")
               },
               {
                 answer: "B、也许",
-                type: "B"
+                type: "B",
+                backgroundImage: require("../assets/btn2.png"),
+                activeBg: require("../assets/btn-2.png")
               },
               {
                 answer: "C、不是",
-                type: "C"
+                type: "C",
+                backgroundImage: require("../assets/btn2.png"),
+                activeBg: require("../assets/btn-2.png")
               }
             ]
           }
@@ -125,6 +141,9 @@ export default {
   methods: {
     click(event) {
       console.log(event);
+      if (event) {
+        alert("跳转到结果页");
+      }
     },
     stop(evnet) {
       // console.log(evnet);

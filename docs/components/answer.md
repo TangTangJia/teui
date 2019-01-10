@@ -12,8 +12,7 @@
           "title": {  // 标题样式
             "width": number, // 标题宽度 单位rem 换算width/32
             "height": number, // 标题高度
-            "backgroundImage": string, // 背景  如：'url(' + require('../assets/btn2.png') + ')'
-            "left": "50%", // 偏移
+            "backgroundImage": string, // 背景  如：require("../assets/three_answer_bg.png")
             "top": number || string, // 偏移
             "paddingLeft": number,
             "fontSize": "12px", // 可选
@@ -24,8 +23,6 @@
           "answer": { // 选项样式
             "width": number, // 选项宽度 单位rem
             "height": number,
-            "backgroundImage": string,  // 如：'url(' + require('../assets/btn2.png') + ')'
-            "left": "50%",
             "top": number || string,
             "lineHeight": number,
             "fontSize": "12px", // 单位px 可选
@@ -45,7 +42,9 @@
             "ques": [ // 题目选项
               {
                 "answer": string, // 选项内容
-                "type": string // 选项标识 如“A”
+                "type": string, // 选项标识 如“A”
+                "backgroundImage": string,  //  选项背景图  如：require("../assets/three_answer_bg.png")或网路路径
+                "activeBg": string // 选项点击状态背景图  如require("../assets/three_answer_bg.png")或网路路径
               }
             ]
           }

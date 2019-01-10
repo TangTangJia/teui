@@ -11,6 +11,7 @@
     <te-circleLottery
       :data="circleData"
       @lotteryDone="lotteryDone"
+      class="circle"
     ></te-circleLottery>
   </div>
 </template>
@@ -188,5 +189,10 @@ export default {
   left: 50%;
   top: 10%;
   transform: translateX(-50%);
+}
+.circle {
+  position: absolute;
+  left: 20%;
+  top: 10%;
 }
 </style>

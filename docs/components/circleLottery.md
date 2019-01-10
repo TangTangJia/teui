@@ -17,3 +17,6 @@
         "prizeNum": number // 获奖奖品索引  （从起点开始逆时针计算，从1开始）
       }
 ```
+----
+#### 示例图
+![示例图](images/circleLottery.png)

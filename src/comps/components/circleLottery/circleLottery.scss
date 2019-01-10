@@ -1,0 +1,33 @@
+.te__circleLottery{
+    // width: 500px;
+    // height: 507px;
+    // background-image: url('/static/images/turnplate-bg.png');
+    background-repeat: no-repeat;
+    background-size:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .lottery_inner{
+        width: 85%;
+        height: 85%;
+        // background-image: url('/static/images/turntable.png');
+        background-repeat: no-repeat;
+        background-size:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // transform:rotate3d(0, 0, 1, 67.5deg);
+    }
+    .lottery_point{
+        width: 25%;
+        height: 30%;
+        // background-image: url('/static/images/pointer.png');
+        background-repeat: no-repeat;
+        background-size:100%;
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+    }
+}

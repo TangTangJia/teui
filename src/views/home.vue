@@ -6,8 +6,12 @@
       @click="click"
       class="btn"
     >成功</te-button> -->
-    <te-answer :data="childData" @answerClick="click"></te-answer>
+    <!-- <te-answer :data="childData" @answerClick="click"></te-answer> -->
     <!-- <te-lottery :data="lotteryData" @stop="stop" class="lottery"></te-lottery> -->
+    <te-circleLottery
+      :data="circleData"
+      @lotteryDone="lotteryDone"
+    ></te-circleLottery>
   </div>
 </template>
 
@@ -135,6 +139,15 @@ export default {
           borderRadius: "10px",
           backgroundColor: "#1d242e"
         }
+      },
+      circleData: {
+        outBg: "/static/images/turnplate-bg.png",
+        outWidth: "500px",
+        outHeight: "507px",
+        innerBg: "/static/images/turntable.png",
+        pointBg: "/static/images/pointer.png",
+        total: 8,
+        prizeNum: 2
       }
     };
   },
@@ -148,6 +161,13 @@ export default {
     stop(evnet) {
       // console.log(evnet);
       if (evnet) {
+        setTimeout(() => {
+          alert("抽奖结束");
+        }, 1000);
+      }
+    },
+    lotteryDone(e) {
+      if (e) {
         setTimeout(() => {
           alert("抽奖结束");
         }, 1000);

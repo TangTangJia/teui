@@ -2,12 +2,14 @@ import "./styles/index.scss";
 import Button from "./components/button/index";
 import Answer from "./components/answer/index";
 import Lottery from "./components/lottery/index";
+import CircleLottery from "./components/circleLottery/index";
 // import Toast from './components/toast/index'
 
 const components = {
   Button,
   Answer,
-  Lottery
+  Lottery,
+  CircleLottery
 };
 
 const install = function(Vue) {

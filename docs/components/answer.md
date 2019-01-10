@@ -38,7 +38,7 @@
           {
             "index": number, // 当前题目索引 从1开始
             "title": string, // 题目标题
-            "selected": string, // 当前题目选择的答案
+            "selected": string, // 当前题目选择的答案 初始值为空字符串
             "ques": [ // 题目选项
               {
                 "answer": string, // 选项内容

@@ -8,7 +8,7 @@
 #### 数据结构
 ``` json 
       "circleData": {
-        "outBg": string,  // 背景图
+        "outBg": string,  // 外层背景图
         "outWidth": string, // 宽度   (需带单位，pc端：px；移动端：实际宽度/32rem)
         "outHeight": string,   // 高度  (需带单位，pc端：px；移动端：实际宽度/32rem)
         "innerBg": string,    // 奖品内容区域背景图

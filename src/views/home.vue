@@ -8,11 +8,19 @@
     >成功</te-button> -->
     <!-- <te-answer :data="childData" @answerClick="click"></te-answer> -->
     <!-- <te-lottery :data="lotteryData" @stop="stop" class="lottery"></te-lottery> -->
-    <te-circleLottery
+    <!-- <te-circleLottery
       :data="circleData"
       @lotteryDone="lotteryDone"
       class="circle"
-    ></te-circleLottery>
+    ></te-circleLottery> -->
+    <te-login
+      class="login"
+      :svrList="svrList"
+      :isShowSvr="isShowSvr"
+      :LoginStyle="LoginStyle"
+      @userInfo="userInfo"
+      @svrInfo="svrInfo"
+    ></te-login>
   </div>
 </template>
 
@@ -20,6 +28,8 @@
 export default {
   data() {
     return {
+      svrList: [],
+      isShowSvr: false,
       childData: {
         style: {
           title: {
@@ -149,6 +159,25 @@ export default {
         pointBg: "/static/images/pointer.png",
         total: 8,
         prizeNum: 2
+      },
+      LoginStyle: {
+        width: "500px",
+        height: "316px",
+        aBg: "/static/images/login.png",
+        sBg: "/static/images/server_bg.png",
+        iWidth: "445px",
+        iHeight: "55px",
+        paddingLeft: "50px",
+        fontSize: "20px",
+        fTop: "76px",
+        sTop: "145px",
+        bTop: "215px",
+        bHeight: "80px",
+        cWidth: "32px",
+        cHeight: "32px",
+        cTop: "18px",
+        cRight: "18px",
+        pColor: "#ffffff"
       }
     };
   },
@@ -173,6 +202,61 @@ export default {
           alert("抽奖结束");
         }, 1000);
       }
+    },
+    userInfo(info) {
+      console.log(info);
+      fetch("http://120.79.198.187:9006/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          usernameOrPhone: info.account,
+          pwd: info.pwd
+        })
+      })
+        .then(res => res.json())
+        .then(res => {
+          console.log(res);
+          if (res.statusCode === 1) {
+            this.getSvrList(
+              res.data.accountId,
+              "098f6bcd4621d373cade4e832627b4f6"
+            );
+          } else {
+            alert(res.msg);
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    getSvrList(accountId, appId) {
+      fetch(
+        `http://120.79.198.187:9006/roles?appId=${appId}&accountId=${accountId}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      )
+        .then(res => res.json())
+        .then(res => {
+          console.log(res);
+          if (res.statusCode === 1) {
+            this.svrList = res.data;
+            this.isShowSvr = true;
+          } else {
+            alert(res.msg);
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    svrInfo(svrInfo) {
+      console.log(svrInfo);
     }
   }
 };
@@ -191,6 +275,11 @@ export default {
   transform: translateX(-50%);
 }
 .circle {
+  position: absolute;
+  left: 20%;
+  top: 10%;
+}
+.login {
   position: absolute;
   left: 20%;
   top: 10%;

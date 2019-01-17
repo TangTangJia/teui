@@ -1,0 +1,140 @@
+.te__login{
+    .login_user{
+        width: 500px;
+        height: 316px;
+        // background: url('/static/images/login.png') no-repeat;
+        background-repeat: no-repeat;
+        background-size:100%;
+        position: relative;
+        .account,.pwd{
+            // width: 445px;
+            // height: 55px;
+            input{
+                width: 100%;
+                height: 100%;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                // padding-left:50px;
+                // font-size:20px;
+                // &::-webkit-input-placeholder { /* WebKit browsers */
+                //     color:    #ffffff;
+                // }
+                // &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                //     color:    #ffffff;
+                // }
+                // &::-moz-placeholder { /* Mozilla Firefox 19+ */
+                //     color:    #ffffff;
+                // }
+                // &:-ms-input-placeholder { /* Internet Explorer 10+ */
+                //     color:    #ffffff;
+                // }
+            }
+        }
+        .account{
+            position: absolute;
+            left:50%;
+            transform: translateX(-50%);
+            // top:76px;
+        }
+        .pwd{
+            position: absolute;
+            left:50%;
+            // top:145px;
+            transform: translateX(-50%);
+        }
+        .send{
+            // width: 450px;
+            // height: 80px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            // top:215px;
+            cursor: pointer;
+        }
+        .close{
+            // width: 32px;
+            // height: 32px;
+            position: absolute;
+            // right:18px;
+            // top:16px;
+            cursor: pointer;
+        }
+    }
+    .login_server{
+        // width: 500px;
+        // height: 350px;
+        // background: url('/static/images/server_bg.png') no-repeat;
+        background-repeat: no-repeat;
+        background-size:100%;
+        position: relative;
+        .select{
+            // width: 445px;
+            // height: 50px;
+        }
+        .select .placeholder {
+            display: block;
+            padding: 1em;
+            border-radius: 2px;
+            background: transparent;
+            // color: #fff;
+            cursor: pointer;
+        }
+        .svr{
+            position: absolute;
+            left:50%;
+            transform: translateX(-50%);
+            // top:86px;
+            z-index: 101;
+        }
+        .role {
+            position: absolute;
+            left:50%;
+            transform: translateX(-50%);
+            // top:154px;
+            z-index: 100;
+        }
+        .select ul {
+            position: absolute;
+            overflow: hidden;
+            width: 100%;
+            background: #fff;
+            border-radius: 2px;
+            top: 110%;
+            left: 0;
+            list-style: none;
+            // margin: 5px 0 0 0;
+            padding: 0;
+            z-index: 100;
+        }
+    
+        .select ul li {
+            text-align: left;
+            padding: 0.8em 1em 0.8em 1em;
+            color: #999;
+            cursor: pointer;
+        }
+    
+        .select ul li:hover {
+            background: #4ebbf0;
+            color: #fff;
+        }
+        .close{
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            right:18px;
+            top:18px;
+            cursor: pointer;
+        }
+        .submit{
+            // width: 450px;
+            // height: 80px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            // top:220px;
+            cursor: pointer;
+        }
+    }
+}

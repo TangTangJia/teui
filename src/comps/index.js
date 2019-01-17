@@ -3,13 +3,15 @@ import Button from "./components/button/index";
 import Answer from "./components/answer/index";
 import Lottery from "./components/lottery/index";
 import CircleLottery from "./components/circleLottery/index";
+import Login from "./components/login/index";
 // import Toast from './components/toast/index'
 
 const components = {
   Button,
   Answer,
   Lottery,
-  CircleLottery
+  CircleLottery,
+  Login
 };
 
 const install = function(Vue) {

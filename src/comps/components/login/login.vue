@@ -3,7 +3,7 @@
     <!-- 账号密码 -->
     <div
       class="login_user"
-      v-if="!isShowSvr"
+      v-if="isShowlogin"
       :style="{
         width: LoginStyle.width,
         height: LoginStyle.height,
@@ -18,13 +18,15 @@
           top: LoginStyle.cTop,
           right: LoginStyle.cRight
         }"
+        @click="loginClose"
       ></div>
       <div
         class="account"
         :style="{
           width: LoginStyle.iWidth,
           height: LoginStyle.iHeight,
-          top: LoginStyle.fTop
+          top: LoginStyle.fTop,
+          left: LoginStyle.iLeft
         }"
       >
         <input
@@ -41,7 +43,8 @@
         :style="{
           width: LoginStyle.iWidth,
           height: LoginStyle.iHeight,
-          top: LoginStyle.sTop
+          top: LoginStyle.sTop,
+          left: LoginStyle.iLeft
         }"
       >
         <input
@@ -59,12 +62,13 @@
         :style="{
           width: LoginStyle.iWidth,
           height: LoginStyle.bHeight,
-          top: LoginStyle.bTop
+          top: LoginStyle.bTop,
+          left: LoginStyle.iLeft
         }"
       ></div>
     </div>
     <!-- 选择区服 -->
-    <transition name="animation" mode="out-in">
+    <transition name="animation">
       <div
         class="login_server"
         v-if="isShowSvr"
@@ -79,20 +83,31 @@
           :style="{
             width: LoginStyle.iWidth,
             height: LoginStyle.iHeight,
-            top: LoginStyle.fTop
+            top: LoginStyle.fTop,
+            left: LoginStyle.iLeft
           }"
         >
           <span
             class="placeholder placeholderSvr"
             @click="svrShow = true"
-            :style="{ color: LoginStyle.pColor }"
+            :style="{
+              color: LoginStyle.pColor,
+              lineHeight: LoginStyle.iHeight
+            }"
             >{{ placeholderSvr }}</span
           >
-          <ul class="svrs" v-show="svrShow">
+          <ul
+            class="svrs"
+            v-show="svrShow"
+            :style="{ backgroundColor: LoginStyle.uBgColor }"
+          >
             <li
               v-for="(item, index) in svrList"
               :key="index"
               @click.stop="clickSvr(item.serverId, item.server)"
+              :style="{
+                color: LoginStyle.lColor
+              }"
             >
               {{ item.server }}
             </li>
@@ -103,20 +118,29 @@
           :style="{
             width: LoginStyle.iWidth,
             height: LoginStyle.iHeight,
-            top: LoginStyle.sTop
+            top: LoginStyle.sTop,
+            left: LoginStyle.iLeft
           }"
         >
           <span
             class="placeholder placeholderRole"
             @click="roleShow = true"
-            :style="{ color: LoginStyle.pColor }"
+            :style="{
+              color: LoginStyle.pColor,
+              lineHeight: LoginStyle.iHeight
+            }"
             >{{ placeholderRole }}</span
           >
-          <ul class="roles" v-show="roleShow">
+          <ul
+            class="roles"
+            v-show="roleShow"
+            :style="{ backgroundColor: LoginStyle.uBgColor }"
+          >
             <li
               v-for="(item, index) in roles"
               @click="clickRole(item.roleId, item.roleName)"
               :key="index"
+              :style="{ color: LoginStyle.lColor }"
             >
               {{ item.roleName }}
             </li>
@@ -130,6 +154,7 @@
             top: LoginStyle.cTop,
             right: LoginStyle.cRight
           }"
+          @click="svrClose"
         ></div>
         <div
           class="submit"
@@ -137,7 +162,8 @@
           :style="{
             width: LoginStyle.iWidth,
             height: LoginStyle.bHeight,
-            top: LoginStyle.bTop
+            top: LoginStyle.bTop,
+            left: LoginStyle.iLeft
           }"
         ></div>
       </div>
@@ -148,7 +174,7 @@
 <script>
 export default {
   name: "te-login",
-  props: ["svrList", "isShowSvr", "LoginStyle"],
+  props: ["svrList", "isShowSvr", "LoginStyle", "isShowlogin"],
   data() {
     return {
       svrShow: false,
@@ -185,20 +211,17 @@ export default {
     },
     // 将选择的区服返回给父组件
     submit() {
-      // 将选择的服务器和角色id返回给父组件
       this.$emit("svrInfo", { roleId: this.roleId, svrId: this.serverId });
+    },
+    // 将点击关闭操作返回给父组件
+    loginClose(e) {
+      this.$emit("loginClose", e);
+    },
+    svrClose(e) {
+      this.$emit("svrClose", e);
     }
   }
 };
 </script>
 
-<style scoped>
-.animation-enter-active,
-.animation-leave-active {
-  transition: opacity 2s;
-}
-.animation-enter,
-.animation-leave-to {
-  opacity: 0;
-}
-</style>
+<style scoped></style>

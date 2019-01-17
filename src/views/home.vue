@@ -18,8 +18,11 @@
       :svrList="svrList"
       :isShowSvr="isShowSvr"
       :LoginStyle="LoginStyle"
+      :isShowlogin="isShowlogin"
       @userInfo="userInfo"
       @svrInfo="svrInfo"
+      @loginClose="loginClose"
+      @svrClose="svrClose"
     ></te-login>
   </div>
 </template>
@@ -30,6 +33,7 @@ export default {
     return {
       svrList: [],
       isShowSvr: false,
+      isShowlogin: true,
       childData: {
         style: {
           title: {
@@ -161,23 +165,26 @@ export default {
         prizeNum: 2
       },
       LoginStyle: {
-        width: "500px",
-        height: "316px",
-        aBg: "/static/images/login.png",
-        sBg: "/static/images/server_bg.png",
-        iWidth: "445px",
-        iHeight: "55px",
-        paddingLeft: "50px",
-        fontSize: "20px",
-        fTop: "76px",
-        sTop: "145px",
-        bTop: "215px",
-        bHeight: "80px",
-        cWidth: "32px",
-        cHeight: "32px",
-        cTop: "18px",
-        cRight: "18px",
-        pColor: "#ffffff"
+        width: "18.75rem",
+        height: "10.53rem",
+        aBg: "/static/images/login3.png",
+        sBg: "/static/images/login4.png",
+        uBgColor: "#818181",
+        lColor: "#ffffff",
+        iWidth: "15.06rem",
+        iHeight: "1.5rem",
+        iLeft: "1.88rem",
+        paddingLeft: "1.56rem",
+        fontSize: "14px",
+        fTop: "3.44rem",
+        sTop: "5.53rem",
+        bTop: "7.81rem",
+        bHeight: "2rem",
+        cWidth: "1rem",
+        cHeight: "1rem",
+        cTop: "1.25rem",
+        cRight: "1.72rem",
+        pColor: "#818181"
       }
     };
   },
@@ -246,6 +253,7 @@ export default {
           console.log(res);
           if (res.statusCode === 1) {
             this.svrList = res.data;
+            this.isShowlogin = false;
             this.isShowSvr = true;
           } else {
             alert(res.msg);
@@ -257,6 +265,13 @@ export default {
     },
     svrInfo(svrInfo) {
       console.log(svrInfo);
+    },
+    loginClose(e) {
+      console.log(e);
+      this.isShowlogin = false;
+    },
+    svrClose() {
+      this.isShowSvr = false;
     }
   }
 };

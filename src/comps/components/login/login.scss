@@ -33,22 +33,22 @@
         }
         .account{
             position: absolute;
-            left:50%;
-            transform: translateX(-50%);
+            // left:50%;
+            // transform: translateX(-50%);
             // top:76px;
         }
         .pwd{
             position: absolute;
-            left:50%;
+            // left:50%;
             // top:145px;
-            transform: translateX(-50%);
+            // transform: translateX(-50%);
         }
         .send{
             // width: 450px;
             // height: 80px;
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            // left: 50%;
+            // transform: translateX(-50%);
             // top:215px;
             cursor: pointer;
         }
@@ -74,7 +74,9 @@
         }
         .select .placeholder {
             display: block;
-            padding: 1em;
+            // padding: 1em;
+            // line-height: 1.5rem;
+            padding-left: 8px;
             border-radius: 2px;
             background: transparent;
             // color: #fff;
@@ -82,15 +84,15 @@
         }
         .svr{
             position: absolute;
-            left:50%;
-            transform: translateX(-50%);
+            // left:50%;
+            // transform: translateX(-50%);
             // top:86px;
             z-index: 101;
         }
         .role {
             position: absolute;
-            left:50%;
-            transform: translateX(-50%);
+            // left:50%;
+            // transform: translateX(-50%);
             // top:154px;
             z-index: 100;
         }
@@ -98,7 +100,7 @@
             position: absolute;
             overflow: hidden;
             width: 100%;
-            background: #fff;
+            // background: #fff;
             border-radius: 2px;
             top: 110%;
             left: 0;
@@ -111,7 +113,7 @@
         .select ul li {
             text-align: left;
             padding: 0.8em 1em 0.8em 1em;
-            color: #999;
+            // color: #999;
             cursor: pointer;
         }
     
@@ -131,10 +133,18 @@
             // width: 450px;
             // height: 80px;
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            // left: 50%;
+            // transform: translateX(-50%);
             // top:220px;
             cursor: pointer;
         }
+    }
+    .animation-enter-active,
+    .animation-leave-active {
+        transition: opacity 0.5s;
+    }
+    .animation-enter,
+    .animation-leave-to {
+        opacity: 0;
     }
 }

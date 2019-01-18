@@ -7,17 +7,15 @@
       :svrList="svrList"
       :isShowSvr="isShowSvr"
       :isShowlogin="isShowlogin"
-      :LoginStyle="LoginStyle"
+      :loginStyle="loginStyle"
       @userInfo="userInfo"
       @svrInfo="svrInfo"
-      @loginClose="loginClose"
-      @svrClose="svrClose"
     ></te-login>
 ```
 #### 适配：移动端、PC端
 #### 数据结构
 ``` json 
-        "LoginStyle": {            // 登录框样式 (所有数值都需带单位，pc端：px；移动端：实际宽度/32rem)
+        "loginStyle": {            // 登录框样式 (所有数值都需带单位，pc端：px；移动端：实际宽度/32rem)
             "width": string,       // 总宽度 
             "height": string,      // 总高度
             "aBg": string,         //  账户信息登录框背景图(包含除提示语外的所有内容)
@@ -50,8 +48,6 @@
 |返回数据|
 | userInfo | 返回用户输入的账号和密码 | object | y | |
 | svrInfo | 返回用户选择的服务器id和角色id | object | y |
-| loginClose | 返回用户点击关闭账号信息登录框的操作 | event | y |
-| svrClose | 返回用户点击关闭服务器选择框的操作 | event | y |  
 
 ----
 #### 示例图

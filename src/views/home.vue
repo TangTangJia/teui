@@ -16,13 +16,11 @@
     <te-login
       class="login"
       :svrList="svrList"
-      :isShowSvr="isShowSvr"
+      :isShowSvr.sync="isShowSvr"
+      :isShowlogin.sync="isShowlogin"
       :LoginStyle="LoginStyle"
-      :isShowlogin="isShowlogin"
       @userInfo="userInfo"
       @svrInfo="svrInfo"
-      @loginClose="loginClose"
-      @svrClose="svrClose"
     ></te-login>
   </div>
 </template>
@@ -165,25 +163,25 @@ export default {
         prizeNum: 2
       },
       LoginStyle: {
-        width: "18.75rem",
-        height: "10.53rem",
-        aBg: "/static/images/login3.png",
-        sBg: "/static/images/login4.png",
+        width: "640px",
+        height: "365px",
+        aBg: "/static/images/login1.png",
+        sBg: "/static/images/login2.png",
         uBgColor: "#818181",
         lColor: "#ffffff",
-        iWidth: "15.06rem",
-        iHeight: "1.5rem",
-        iLeft: "1.88rem",
-        paddingLeft: "1.56rem",
-        fontSize: "14px",
-        fTop: "3.44rem",
-        sTop: "5.53rem",
-        bTop: "7.81rem",
-        bHeight: "2rem",
-        cWidth: "1rem",
-        cHeight: "1rem",
-        cTop: "1.25rem",
-        cRight: "1.72rem",
+        iWidth: "480px",
+        iHeight: "48px",
+        iLeft: "60px",
+        paddingLeft: "45px",
+        fontSize: "20px",
+        fTop: "120px",
+        sTop: "188px",
+        bTop: "262px",
+        bHeight: "62px",
+        cWidth: "60px",
+        cHeight: "60px",
+        cTop: "0",
+        cRight: "0",
         pColor: "#818181"
       }
     };
@@ -265,14 +263,14 @@ export default {
     },
     svrInfo(svrInfo) {
       console.log(svrInfo);
-    },
-    loginClose(e) {
-      console.log(e);
-      this.isShowlogin = false;
-    },
-    svrClose() {
-      this.isShowSvr = false;
     }
+    // loginClose(e) {
+    //   console.log(e);
+    //   this.isShowlogin = false;
+    // },
+    // svrClose() {
+    //   this.isShowSvr = false;
+    // }
   }
 };
 </script>

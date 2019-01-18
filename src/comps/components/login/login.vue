@@ -213,12 +213,12 @@ export default {
     submit() {
       this.$emit("svrInfo", { roleId: this.roleId, svrId: this.serverId });
     },
-    // 将点击关闭操作返回给父组件
-    loginClose(e) {
-      this.$emit("loginClose", e);
+    // 点击关闭操作
+    loginClose() {
+      this.$emit("update:isShowlogin", false);
     },
-    svrClose(e) {
-      this.$emit("svrClose", e);
+    svrClose() {
+      this.$emit("update:isShowSvr", false);
     }
   }
 };

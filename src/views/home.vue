@@ -7,12 +7,12 @@
       class="btn"
     >成功</te-button> -->
     <!-- <te-answer :data="childData" @answerClick="click"></te-answer> -->
-    <te-lottery :data="lotteryData" @stop="stop" class="lottery"></te-lottery>
-    <!-- <te-circleLottery
+    <!-- <te-lottery :data="lotteryData" @stop="stop" class="lottery"></te-lottery> -->
+    <te-circleLottery
       :data="circleData"
       @lotteryDone="lotteryDone"
       class="circle"
-    ></te-circleLottery> -->
+    ></te-circleLottery>
     <!-- <te-login
       class="login"
       :svrList="svrList"
@@ -160,7 +160,8 @@ export default {
         innerBg: "/static/images/turntable.png",
         pointBg: "/static/images/pointer.png",
         total: 8,
-        prizeNum: 2
+        prizeNum: 2,
+        isStart: true
       },
       LoginStyle: {
         width: "640px",

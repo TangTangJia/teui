@@ -33,11 +33,18 @@ export default {
       r_acceleration: 0.1, // 减速的加速度0.1
       firstTimes: 48, // 48次
       total: this.data.total, // 奖品总数量
-      prizeNum: this.data.prizeNum // 中奖奖品索引
+      prizeNum: this.data.prizeNum, // 中奖奖品索引,
+      flag: this.data.isStart
     };
   },
   methods: {
     start() {
+      if (this.flag) {
+        this.flag = false;
+        this.move();
+      }
+    },
+    move() {
       let _this = this;
       let difference =
         (this.prizeNum / this.total) * 360 - 360 / this.total / 2;

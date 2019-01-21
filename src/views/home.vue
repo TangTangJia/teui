@@ -200,7 +200,7 @@ export default {
           // alert("抽奖结束");
           this.$toast.text({
             content: "抽奖结束111",
-            direction: "center"
+            direction: "bottom"
           });
         }, 1000);
       }

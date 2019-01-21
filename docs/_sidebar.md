@@ -6,3 +6,4 @@
  - [九宫格抽奖](components/lottery)
  - [转盘抽奖](components/circleLottery)
  - [游戏登录](components/login)
+ - [toast](components/toast)

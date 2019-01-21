@@ -7,13 +7,13 @@
       class="btn"
     >成功</te-button> -->
     <!-- <te-answer :data="childData" @answerClick="click"></te-answer> -->
-    <!-- <te-lottery :data="lotteryData" @stop="stop" class="lottery"></te-lottery> -->
+    <te-lottery :data="lotteryData" @stop="stop" class="lottery"></te-lottery>
     <!-- <te-circleLottery
       :data="circleData"
       @lotteryDone="lotteryDone"
       class="circle"
     ></te-circleLottery> -->
-    <te-login
+    <!-- <te-login
       class="login"
       :svrList="svrList"
       :isShowSvr.sync="isShowSvr"
@@ -21,7 +21,7 @@
       :LoginStyle="LoginStyle"
       @userInfo="userInfo"
       @svrInfo="svrInfo"
-    ></te-login>
+    ></te-login> -->
   </div>
 </template>
 
@@ -197,14 +197,24 @@ export default {
       // console.log(evnet);
       if (evnet) {
         setTimeout(() => {
-          alert("抽奖结束");
+          // alert("抽奖结束");
+          this.$toast.text({
+            content: "抽奖结束111",
+            direction: "center"
+          });
         }, 1000);
       }
     },
     lotteryDone(e) {
       if (e) {
         setTimeout(() => {
-          alert("抽奖结束");
+          // alert("抽奖结束");
+          console.log(this.$toast);
+          console.log(<te-circleLottery />);
+          this.$toast.text({
+            content: "抽奖结束111",
+            direction: "center"
+          });
         }, 1000);
       }
     },

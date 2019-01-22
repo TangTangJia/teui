@@ -210,8 +210,6 @@ export default {
       if (e) {
         setTimeout(() => {
           // alert("抽奖结束");
-          console.log(this.$toast);
-          console.log(<te-circleLottery />);
           this.$toast.text({
             content: "抽奖结束111",
             direction: "center"

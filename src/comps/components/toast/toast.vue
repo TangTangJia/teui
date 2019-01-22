@@ -1,16 +1,7 @@
 <template>
   <transition name="fade">
     <div class="te__toast--wrap" v-show="isVisible" ref="toast">
-      <!-- <div class="te__mask" v-show="mask"></div> -->
-      <div class="te__toast" :class="classz" :style="directions">
-        <!-- <div v-if="type && type == 'default'" class="te__toast--loading">
-          <xm-loading
-            width="42"
-            height="42"
-            border-width="8"
-            color="#efefef"
-          ></xm-loading>
-        </div> -->
+      <div class="te__toast te__toast--text" :style="directions">
         <div>{{ content }}</div>
       </div>
     </div>
@@ -18,26 +9,20 @@
 </template>
 
 <script>
-import ToastMixin from "./ToastMixin";
 export default {
-  mixins: [ToastMixin],
   props: {
     content: String,
+    isVisible: {
+      type: Boolean,
+      default: false
+    },
     autoClose: {
       type: Boolean,
       default: true
     },
-    mask: {
-      type: Boolean,
-      default: false
-    },
     callBack: {
       type: Function,
       default() {}
-    },
-    type: {
-      type: String,
-      default: ""
     },
     direction: {
       type: String,
@@ -52,6 +37,7 @@ export default {
     }
   },
   mounted() {
+    document.body.appendChild(this.$el);
     setTimeout(() => {
       this.isVisible = true;
     }, 100);
@@ -65,13 +51,6 @@ export default {
     }
   },
   computed: {
-    classz() {
-      if (!this.type) {
-        return "te__toast--text";
-      } else {
-        return "te__toast--loading";
-      }
-    },
     directions() {
       if (this.direction === "top") {
         return "top:20%";
@@ -81,6 +60,10 @@ export default {
         return "top:50%";
       }
     }
+  },
+  // 移除toast
+  beforeDestroy() {
+    this.$el.remove();
   }
 };
 </script>

@@ -11,9 +11,9 @@
 ```
 ### 使用
 ``` bash
-    import teui from 'teui'
-    import 'teui/package/teui.min.css'
-    Vue.use(teui)
+  import teui from 'teui'
+  import 'teui/package/teui.min.css'
+  Vue.use(teui)
 ```
 ## Build Setup
 

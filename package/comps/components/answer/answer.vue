@@ -13,8 +13,13 @@
           <li
             v-for="(subitem, index) in currentQues.ques"
             :key="index"
-            @click="click(subitem.type, currentQues.index)"
-            :style="liStyle"
+            @click="click(subitem.type, currentQues.index, index)"
+            :style="[
+              liStyle,
+              {
+                backgroundImage: 'url(' + subitem.backgroundImage + ')'
+              }
+            ]"
           >
             {{ subitem.answer }}
           </li>
@@ -36,8 +41,8 @@ export default {
         // 标题样式
         width: this.data.style.title.width + "rem",
         height: this.data.style.title.height + "rem",
-        backgroundImage: this.data.style.title.backgroundImage,
-        left: "",
+        backgroundImage: "url(" + this.data.style.title.backgroundImage + ")",
+        // left: "",
         top: this.data.style.title.top + "rem",
         fontSize: "",
         fontWeight: "",
@@ -47,14 +52,14 @@ export default {
       },
       ulStyle: {
         // ul样式
-        left: "",
+        // left: "",
         top: this.data.style.answer.top + "rem"
       },
       liStyle: {
         // li样式
         width: this.data.style.answer.width + "rem",
         height: this.data.style.answer.height + "rem",
-        backgroundImage: this.data.style.answer.backgroundImage,
+        // backgroundImage: "url(" + this.data.style.answer.backgroundImage + ")",
         lineHeight: this.data.style.answer.lineHeight + "rem",
         fontSize: "",
         fontWeight: "",
@@ -67,13 +72,13 @@ export default {
   created() {
     // 设置默认样式
     this.currentQues = this.data.answers[this.index];
-    this.ulStyle.left = this.data.style.answer.left || "50%";
+    // this.ulStyle.left = this.data.style.answer.left || "50%";
     this.titleStyle.fontSize = this.data.style.title.fontSize || "14" + "px";
     this.titleStyle.fontWeight = this.data.style.title.fontWeight || "bold";
     this.titleStyle.color = this.data.style.title.color || "#000000";
     this.titleStyle.justifyContent =
       this.data.style.title.justifyContent || "flex-start";
-    this.titleStyle.left = this.data.style.title.left || "50%";
+    // this.titleStyle.left = this.data.style.title.left || "50%";
     this.liStyle.fontSize = this.data.style.answer.fontSize || "14" + "px";
     this.liStyle.fontWeight = this.data.style.answer.fontWeight || "bold";
     this.liStyle.color = this.data.style.answer.color || "#000000";
@@ -82,21 +87,27 @@ export default {
       this.data.style.answer.paddingLeft || "0.63" + "rem";
   },
   methods: {
-    click(type, index) {
-      this.data.answers[index - 1].selected = type;
-      // 存储答案
-      let sureAnswer = [];
-      if (index === this.data.total) {
-        sureAnswer = this.data.answers.map(item => {
-          return item.selected;
-        });
-        // console.log(sureAnswer);
-        // 将选择的答案传递给父组件
-        this.$emit("answerClick", sureAnswer);
-        return;
-      }
-      this.index = index - 1;
-      this.currentQues = this.data.answers[this.index + 1];
+    click(type, index, tindex) {
+      // 改变当前点击选项的背景图
+      this.data.answers[this.index].ques[
+        tindex
+      ].backgroundImage = this.data.answers[this.index].ques[tindex].activeBg;
+      setTimeout(() => {
+        this.data.answers[index - 1].selected = type;
+        // 存储答案
+        let sureAnswer = [];
+        if (index === this.data.total) {
+          sureAnswer = this.data.answers.map(item => {
+            return item.selected;
+          });
+          // 将选择的答案传递给父组件
+          this.$emit("answerClick", sureAnswer);
+          return;
+        }
+        this.index = index;
+        // 切换下一题
+        this.currentQues = this.data.answers[this.index];
+      }, 400);
     }
   }
 };

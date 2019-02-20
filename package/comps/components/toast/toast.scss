@@ -1,0 +1,42 @@
+.te__toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    color: #fff;
+    z-index: 3001;
+    font-size: $font-size-small;
+    line-height: 1.2;
+    @include border-radius;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    transform: translate3d(-50%, -50%, 0);
+    background-color: rgba(39, 39, 39, .7);
+
+
+    &.te__toast--text {
+        // position: absolute;
+        padding: 12px;
+        min-width: 220px;
+    }
+
+    &.te__toast--loading {
+        width: 120px;
+        min-height: 120px;
+        padding: 15px;
+    }
+
+    & .te__loading {
+        font-size: 0;
+        line-height: 0;
+        z-index: 0;
+        position: relative;
+    }
+
+    & .te__toast--loading .te__loading {
+        margin: 10px 0 5px;
+    }
+
+}

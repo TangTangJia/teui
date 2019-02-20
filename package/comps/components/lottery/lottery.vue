@@ -104,6 +104,8 @@ export default {
     start() {
       //初始化步数
       this.runs_now = 0;
+      this.amplification_index = 0;
+      this.last_index = 0;
       //当前可以点击的状态下
       if (this.roll_flag) {
         this.roll_flag = false;
@@ -147,15 +149,6 @@ export default {
         // 判断是否大于最大数
         this.amplification_index = 1;
       }
-      // let strli = ".li";
-      // strli += this.amplification_index;
-      // let lis = document.querySelectorAll("li");
-      // // 删除类名
-      // for (let item of lis) {
-      //   item.classList.remove("mask");
-      // }
-      // // 给当前项加背景
-      // document.querySelector(strli).classList.add("mask");
       // 删除类名
       this.activeClass = this.activeClass.map(() => {
         return false;

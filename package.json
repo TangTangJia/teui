@@ -1,8 +1,12 @@
 {
   "name": "teui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a UI framework for VUE",
-  "Keywords": "vue ui components",
+  "Keywords": [
+    "vue",
+    "ui",
+    "components"
+  ],
   "author": "tangjia <tangjiacandy@163.com>",
   "main": "package/teui.min.js",
   "scripts": {
